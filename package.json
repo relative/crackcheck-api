@@ -1,0 +1,13 @@
+{
+  "name": "crackcheck-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^8.0.5",
+    "acorn-walk": "^8.0.2",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "proxy-agent": "^4.0.1"
+  }
+}
