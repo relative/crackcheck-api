@@ -2,8 +2,6 @@ const acorn = require('acorn'),
   fetch = require('node-fetch'),
   walk = require('acorn-walk')
 
-const Constants = require('./consts')
-
 const CHAL_REGEX = /<script src="(\/[\w-]+.js)"><\/script>.*<script>window.onload=function\(\){(\w+)\(\);}<\/script>/i,
   HEX_REGEX = /^[0-9A-F]{32}$/gi
 async function getChallengeScript() {
