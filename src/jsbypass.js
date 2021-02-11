@@ -49,10 +49,12 @@ module.exports = async function getProtectionCookie() {
     let id = arr.find(
       (i) => i && typeof i === 'string' && i.length === 32 && i.match(HEX_REGEX)
     )
+    console.log('\n\n\n\n', arr, '\n\n\n\n')
+    console.log(id)
     if (!id) throw new Error('Failed to solve JSChallenge, cookie not found')
     return id
   } catch (err) {
     console.error('Failed to solve JSChallenge, err:', err)
-    process.exit(1)
+    return '?' // dont exit web on error
   }
 }

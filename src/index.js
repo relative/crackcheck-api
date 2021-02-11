@@ -39,11 +39,16 @@ async function lookupSteamId(steamId) {
   const res = await fetch(url, {
     headers: { ...headers },
   })
+
   const json = await res.json()
   return json.totalItems.toString()
 }
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
+
+getProtectionCookie().then((id) => {
+  df_id = id
+})
 
 app.get('/lookup', async (req, res) => {
   try {
